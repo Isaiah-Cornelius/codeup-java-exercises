@@ -8,11 +8,11 @@ public class ControlFlowExercises {
 //        }
 
         //Exercise 1b.
-        int i = 0;
+        int i = 100;
         do {
             System.out.println(i);
-            i += 2;
-        } while (i <= 100);
+            i -= 5;
+        } while (i >= -10);
 
 
 
