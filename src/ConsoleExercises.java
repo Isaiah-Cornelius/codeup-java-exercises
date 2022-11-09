@@ -49,8 +49,8 @@ public class ConsoleExercises {
 //        int age = 31;
 //        System.out.print("Guess my age : ");
 //        int userAgeGuess = scanner.nextInt();
-//
-//
+
+
 //        System.out.println("You guessed : " + userAgeGuess);
 //        if (age == userAgeGuess){
 //            System.out.println("You got it!");
@@ -60,21 +60,20 @@ public class ConsoleExercises {
 //            System.out.println("I'm a bit older than that...");
 //        }
 
-//        float piFloat = (float) 3.14;
+//        float piFloat = (float) 3.14; // or 3.14f
 //        double piDouble = piFloat;
-//
+
+
 //        System.out.println(piFloat); // 3.14
 //        System.out.println(piDouble); // 3.140000104904175
 //        System.out.println(piDouble == piFloat); // true
-//
+
 //        piDouble = piDouble * 1000000000;
 //        piFloat = piFloat   * 1000000000;
-//
+
 //        System.out.println(piFloat); // 3.14E9
 //        System.out.println(piDouble); // 3.140000104904175E9
 //        System.out.println(piDouble == piFloat); // false
-
-
 
     }
 }
