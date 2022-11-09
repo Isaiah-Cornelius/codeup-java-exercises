@@ -22,11 +22,21 @@ public class ControlFlowExercises {
 //        } while (c >= -10);
 
         //Exercise 1b. bullet #3
-        long d = 2;
-        do {
-            System.out.println(d);
-            d *= d;
-        } while (d < 1000000000);
+//        long d = 2;
+//        do {
+//            System.out.println(d);
+//            d *= d;
+//        } while (d < 1000000000);
+
+        //Exercise 1c
+
+        for (int e = 100; e >= -10; e -=5) {
+            System.out.println(e);
+        }
+
+        for(long f = 2; f <1000000000; f *= f){
+            System.out.println(f);
+        }
 
 
 
