@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String [] args){
         //Exercise 1a.
@@ -39,18 +41,56 @@ public class ControlFlowExercises {
 //        }
 
         //2. Fizzbuzz
-        int g;
-        for (g = 1; g <= 100 ; g++){
-            if (g % 3 == 0 && g % 5 == 0){
-                System.out.println("FizzBuzz");
-            } else if (g % 3 == 0){
-                System.out.println("Fizz");
-            } else if (g % 5 == 0){
-                System.out.println("Buzz");
+//        int g;
+//        for (g = 1; g <= 100 ; g++){
+//            if (g % 3 == 0 && g % 5 == 0){
+//                System.out.println("FizzBuzz");
+//            } else if (g % 3 == 0){
+//                System.out.println("Fizz");
+//            } else if (g % 5 == 0){
+//                System.out.println("Buzz");
+//            } else {
+//                System.out.println(g);
+//            }
+//        }
+
+        //3. Display a table of powers
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of squares and cubes you wish to see in the table: ");
+        long userNum = scanner.nextLong();
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | -----");
+        for (int i = 1; userNum > 0; userNum--){
+            if (i*i < 10){
+                System.out.println(i + "      | " + i * i+ "       | " + i * i * i);
+                i++;
+            } else if (i*i < 100){
+                System.out.println(i + "      | " + i * i+ "      | " + i * i * i);
+                i++;
             } else {
-                System.out.println(g);
+                System.out.println(i + "     | " + i * i+ "     | " + i * i * i);
+                i++;
             }
+
         }
+
+        System.out.print("Would you like to continue? y/n : ");
+        String userContinue = scanner.next();
+        scanner.nextLine();
+        if(userContinue.equals("y")){
+            System.out.println("Well lets get after it then...");
+        } else {
+            System.out.println("Ok, lets stop here...");
+        }
+
+
+
+
+
+
+
+
 
 
 
