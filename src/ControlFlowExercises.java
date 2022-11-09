@@ -56,33 +56,80 @@ public class ControlFlowExercises {
 
         //3. Display a table of powers
         Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Enter the number of squares and cubes you wish to see in the table: ");
+//        long userNum = scanner.nextLong();
+//        System.out.println("number | squared | cubed");
+//        System.out.println("------ | ------- | -----");
+//        for (int i = 1; userNum > 0; userNum--){
+//            if (i*i < 10){
+//                System.out.println(i + "      | " + i * i+ "       | " + i * i * i);
+//                i++;
+//            } else if (i*i < 100){
+//                System.out.println(i + "      | " + i * i+ "      | " + i * i * i);
+//                i++;
+//            } else {
+//                System.out.println(i + "     | " + i * i+ "     | " + i * i * i);
+//                i++;
+//            }
+//
+//        }
+//
+//        System.out.print("Would you like to continue? y/n : ");
+//        String userContinue = scanner.next();
+//        scanner.nextLine();
+//        if(userContinue.equals("y")){
+//            System.out.println("Well lets get after it then...");
+//        } else {
+//            System.out.println("Ok, lets stop here...");
+//        }
 
-        System.out.print("Enter the number of squares and cubes you wish to see in the table: ");
-        long userNum = scanner.nextLong();
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-        for (int i = 1; userNum > 0; userNum--){
-            if (i*i < 10){
-                System.out.println(i + "      | " + i * i+ "       | " + i * i * i);
-                i++;
-            } else if (i*i < 100){
-                System.out.println(i + "      | " + i * i+ "      | " + i * i * i);
-                i++;
-            } else {
-                System.out.println(i + "     | " + i * i+ "     | " + i * i * i);
-                i++;
-            }
+        System.out.print("Enter a number from 0 - 100 to see it's letter grade : ");
+        int userGradeNum = scanner.nextInt();
 
-        }
-
-        System.out.print("Would you like to continue? y/n : ");
-        String userContinue = scanner.next();
-        scanner.nextLine();
-        if(userContinue.equals("y")){
-            System.out.println("Well lets get after it then...");
+        if(userGradeNum < 0 || userGradeNum > 100){
+            System.out.println("You dont read so good... you entered : " + userGradeNum);
         } else {
-            System.out.println("Ok, lets stop here...");
+            System.out.print("You entered : " + userGradeNum + ". That's a letter grade of : ");
+            if (userGradeNum < 60){
+                System.out.println("F");
+            } else if (userGradeNum < 67){
+                if (userGradeNum == 60 || userGradeNum == 61){
+                    System.out.println("D-");
+                } else if (userGradeNum == 66 || userGradeNum == 65){
+                    System.out.println("D+");
+                } else {
+                    System.out.println("D");
+                }
+            } else if (userGradeNum < 80){
+                if (userGradeNum == 67 || userGradeNum == 68){
+                    System.out.println("C-");
+                } else if (userGradeNum == 79 || userGradeNum == 78){
+                    System.out.println("C+");
+                } else {
+                    System.out.println("C");
+                }
+            } else if (userGradeNum < 88){
+                if (userGradeNum == 80 || userGradeNum == 81){
+                    System.out.println("B-");
+                } else if (userGradeNum == 87 || userGradeNum == 86){
+                    System.out.println("B+");
+                } else {
+                    System.out.println("B");
+                }
+            } else if (userGradeNum < 101) {
+                if (userGradeNum == 88 || userGradeNum == 89){
+                    System.out.println("A-");
+                } else if (userGradeNum == 100 || userGradeNum == 99){
+                    System.out.println("A+");
+                } else {
+                    System.out.println("A");
+                }
+            }
         }
+
+
+
 
 
 
