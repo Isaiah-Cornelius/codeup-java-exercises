@@ -29,14 +29,29 @@ public class ControlFlowExercises {
 //        } while (d < 1000000000);
 
         //Exercise 1c
+//
+//        for (int e = 100; e >= -10; e -=5) {
+//            System.out.println(e);
+//        }
+//
+//        for(long f = 2; f <1000000000; f *= f){
+//            System.out.println(f);
+//        }
 
-        for (int e = 100; e >= -10; e -=5) {
-            System.out.println(e);
+        //2. Fizzbuzz
+        int g;
+        for (g = 1; g <= 100 ; g++){
+            if (g % 3 == 0 && g % 5 == 0){
+                System.out.println("FizzBuzz");
+            } else if (g % 3 == 0){
+                System.out.println("Fizz");
+            } else if (g % 5 == 0){
+                System.out.println("Buzz");
+            } else {
+                System.out.println(g);
+            }
         }
 
-        for(long f = 2; f <1000000000; f *= f){
-            System.out.println(f);
-        }
 
 
 
