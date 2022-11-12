@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodsExercises {
 
     public static int additionMethod(int x, int y){
@@ -44,12 +46,27 @@ public class MethodsExercises {
         return x % y;
     }
 
+    public static int getInteger(int min, int max){
+
+        Scanner scanner = new Scanner(System.in);
+        int userNumber;
+
+        do {
+            System.out.print("Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
+            userNumber = scanner.nextInt();
+        } while (userNumber < min || userNumber > max);
+
+        return userNumber;
+    }
+
 
 
 
 
     public static void main(String [] args){
-        System.out.println(recursionMultiplicationMethod(4,5));
+//        System.out.println(recursionMultiplicationMethod(4,5));
+
+        System.out.print(getInteger(1,10));
 
     }
 }
