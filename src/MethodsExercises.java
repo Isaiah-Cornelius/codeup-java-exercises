@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class MethodsExercises {
 
-    public static int additionMethod(int x, int y){
+    //Q1
+     public static int additionMethod(int x, int y){
         System.out.println(x+y);
         return x + y;
     }
@@ -46,19 +47,98 @@ public class MethodsExercises {
         return x % y;
     }
 
+    //Q2 ask about recursion
     public static int getInteger(int min, int max){
 
         Scanner scanner = new Scanner(System.in);
         int userNumber;
 
         do {
-            System.out.print("Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
+            System.out.print("getInteger; Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
             userNumber = scanner.nextInt();
         } while (userNumber < min || userNumber > max);
 
         return userNumber;
     }
 
+    //Q3
+    public static void getFactorial(){
+         int min = 1;
+         int max = 20;
+         Scanner scanner = new Scanner(System.in);
+         int userNumber;
+         long userNumberFactorial = 1;
+         String displayString = "";
+
+         do {
+             System.out.print("getFactorial; Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
+             userNumber = scanner.nextInt();
+         } while (userNumber < min || userNumber > max);
+         scanner.nextLine();
+
+         displayString += userNumber + "! = ";
+
+         for (int i = 1; i <= userNumber; i++){
+             userNumberFactorial *= i;
+
+             if (i == userNumber){
+                 displayString += i + " = ";
+                 break;
+             }
+             displayString += i + " x ";
+         }
+         displayString += userNumberFactorial;
+         System.out.println(displayString);
+
+         System.out.print("Continue? y/n : ");
+
+         String userContinue = scanner.next();
+
+         if (userContinue.equals("y")){
+             getFactorial();
+         }
+    }
+
+    public static void recursionGetFactorial() {
+        int min = 1;
+        int max = 20;
+        Scanner scanner = new Scanner(System.in);
+        int userNumber;
+        long userNumberFactorial;
+        String displayString = "";
+
+        do {
+            System.out.print("getFactorial; Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
+            userNumber = scanner.nextInt();
+        } while (userNumber < min || userNumber > max);
+        scanner.nextLine();
+
+        userNumberFactorial = makeRecursiveGetFactorial(userNumber);
+
+        displayString += userNumber + "! = ";
+
+        for (int i = 1; i <= userNumber; i++){
+            if (i == userNumber){
+                displayString += i + " = ";
+                break;
+            }
+            displayString += i + " x ";
+        }
+        displayString += userNumberFactorial;
+        System.out.println(displayString);
+
+    }
+
+    public static long makeRecursiveGetFactorial(int x){
+         long returnValue = 1;
+         switch (x){
+             case 1:
+                 break;
+             default:
+                 returnValue *= x * makeRecursiveGetFactorial(x-1);
+         }
+         return returnValue;
+    }
 
 
 
@@ -66,7 +146,11 @@ public class MethodsExercises {
     public static void main(String [] args){
 //        System.out.println(recursionMultiplicationMethod(4,5));
 
-        System.out.print(getInteger(1,10));
+//        System.out.print(getInteger(1,10));
+
+//        getFactorial();
+
+        recursionGetFactorial();
 
     }
 }
