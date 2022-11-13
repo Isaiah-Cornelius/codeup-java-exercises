@@ -140,6 +140,28 @@ public class MethodsExercises {
          return returnValue;
     }
 
+    //Q4
+    public static long rollDice(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("How many sides on the dice? ");
+        int numDiceSides = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Oooo some " + numDiceSides + " sided dice...");
+        String userRollAnswer;
+        do {
+            System.out.print("Wanna roll em? y/n ");
+            userRollAnswer = scanner.next();
+            scanner.nextLine();
+            System.out.println();
+        } while (!userRollAnswer.equals("y"));
+        System.out.println("I knew you'd say yes! Here goes!..");
+        long dice1 = (long) Math.floor(Math.random() * (numDiceSides) +1);
+        long dice2 = (long) Math.floor(Math.random() * (numDiceSides) +1);
+        System.out.println("Dice 1 : " + dice1);
+        System.out.println("Dice 2 : " + dice2);
+
+        return dice1 + dice2;
+    }
 
 
 
@@ -150,7 +172,9 @@ public class MethodsExercises {
 
 //        getFactorial();
 
-        recursionGetFactorial();
+//        recursionGetFactorial();
+
+        System.out.print(rollDice());
 
     }
 }
