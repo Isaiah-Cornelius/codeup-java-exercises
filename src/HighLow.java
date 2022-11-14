@@ -1,17 +1,38 @@
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
+
 public class HighLow {
+
+    public static void rollOutString(String s){
+        int i;
+        String[] stringArray = s.split(" ");
+        for (i = 0; i < stringArray.length; i++){
+            if (i == stringArray.length -1){
+                System.out.printf("%s", stringArray[i]);
+                System.out.println();
+                break;
+            }
+            System.out.printf("%s ", stringArray[i]);
+            try {
+                Thread.sleep(250);
+            } catch (InterruptedException ex){
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 
     public static void playAgain(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Would you like to play again? y/n : ");
+        rollOutString("Would you like to play again? y/n : ");
         String userPlayAgain = sc.next();
         if (userPlayAgain.equals("y")) {
-            System.out.println("Great!!!! Let's play again!!!!");
+            rollOutString("Great!!!! Let's play again!!!!");
             playGuessingGame();
         } else {
-            System.out.println("Aww... ");
-            System.out.println("Ok, but I have another number in mind if you ever want to guess again!");
-            System.out.println("See ya!");
+            rollOutString("Aww... ");
+            rollOutString("Ok, but I have another number in mind if you ever want to guess again!");
+            rollOutString("See ya!");
         }
     }
 
@@ -24,27 +45,27 @@ public class HighLow {
         System.out.println("******************************************************");
 
         int guessCount = 6;
-        System.out.println("I'm thinking of a number between -1 and 101...");
+        rollOutString("I'm thinking of a number between -1 and 101...");
         System.out.println("******************************************************");
-        System.out.println("Can you guess my number with " + guessCount + " guesses?");
+        rollOutString("Can you guess my number with " + guessCount + " guesses?");
 //        System.out.print("How many guesses do you need?");
         int magicNumber = (int) Math.floor(Math.random() * (101));
         int i =1;
         do {
             System.out.println("******************************************************");
             System.out.println("******************************************************");
-            System.out.println("You have " + (guessCount - i + 1)+ " guesses remaining!");
+            rollOutString("You have " + (guessCount - i + 1)+ " guesses remaining!");
             System.out.print("Guess #" + i + ": ");
             int userGuess = sc.nextInt();
             if (userGuess < 101 && userGuess > -1){
                 if (userGuess == magicNumber){
-                    System.out.println("You got it! And in only " + i + " guesses!");
+                    rollOutString("You got it! And in only " + i + " guesses!");
                     playAgain();
                     break;
                 } else if (userGuess < magicNumber){
-                    System.out.println("My number is HIGHER than that...");
+                    rollOutString("My number is HIGHER than that...");
                 } else {
-                    System.out.println("my number is LOWER than that...");
+                    rollOutString("My number is LOWER than that...");
                 }
                 i++;
             } else {
@@ -52,7 +73,7 @@ public class HighLow {
             }
         } while (i <= guessCount);
         System.out.println("******************************************************");
-        System.out.println("You're out of guesses! My number was " + magicNumber + "!");
+        rollOutString("You're out of guesses! My number was " + magicNumber + "!");
         playAgain();
     }
 
