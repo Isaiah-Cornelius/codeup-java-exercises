@@ -25,13 +25,13 @@ public class Person {
 
     public static void main(String[] args) {
 
-//        Person isaiah = new Person("Isaiah");
+        Person isaiah = new Person();
 
-//        isaiah.setName("Isaiah");
+        isaiah.setName("Isaiah");
 
-//        System.out.println(isaiah.getName());
+        System.out.println(isaiah.getName());
 
-//        isaiah.sayHello();
+        isaiah.sayHello();
 
 //        Person person1 = new Person("John");
 //        Person person2 = new Person("John");
