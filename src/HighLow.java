@@ -51,15 +51,18 @@ public class HighLow {
 //        System.out.print("How many guesses do you need?");
         int magicNumber = (int) Math.floor(Math.random() * (101));
         int i =1;
+        String winner = "";
         do {
             System.out.println("******************************************************");
             System.out.println("******************************************************");
             rollOutString("You have " + (guessCount - i + 1)+ " guesses remaining!");
             System.out.print("Guess #" + i + ": ");
             int userGuess = sc.nextInt();
+
             if (userGuess < 101 && userGuess > -1){
                 if (userGuess == magicNumber){
                     rollOutString("You got it! And in only " + i + " guesses!");
+                    winner = "winner";
                     playAgain();
                     break;
                 } else if (userGuess < magicNumber){
@@ -72,9 +75,11 @@ public class HighLow {
                 System.out.println("You can't pick that, try again :");
             }
         } while (i <= guessCount);
-        System.out.println("******************************************************");
-        rollOutString("You're out of guesses! My number was " + magicNumber + "!");
-        playAgain();
+        if (!winner.equals("winner")){
+            System.out.println("******************************************************");
+            rollOutString("You're out of guesses! My number was " + magicNumber + "!");
+            playAgain();
+        }
     }
 
     public static void main(String [] args){
