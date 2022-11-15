@@ -48,20 +48,26 @@ public class MethodsExercises {
     }
 
     //Q2 ask about recursion
-//    public static int getInteger(int min, int max){
-//
-//        Scanner scanner = new Scanner(System.in);
-//        int userNumber;
-//        System.out.print("getInteger; Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
-//        userNumber = scanner.nextInt();
-//        if (userNumber > max || userNumber < min){
-//            System.out.println("Invalid Input");
-//            getInteger(min, max);
-//        }
-//        System.out.println(userNumber); //Here is where I see the correct (qualifying) userNumber print first then steps back until returning the original userNumber
-//        //Example input: 12 11 10 sout(userNumer) prints 10 11 12 and returns 12.
-//        return userNumber;
-//    }
+    public static int validUserNum;
+    public static int recursiveGetInteger(int min, int max){
+
+        Scanner scanner = new Scanner(System.in);
+        int userNumber;
+
+        System.out.print("recursiveGetInteger; Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
+        userNumber = scanner.nextInt();
+        if (userNumber >= min && userNumber <= max){
+            validUserNum = userNumber;
+        }
+        if (userNumber > max || userNumber < min){
+            System.out.println("Invalid Input");
+            recursiveGetInteger(min, max);
+        }
+
+        System.out.println(userNumber); //Here is where I see the correct (qualifying) userNumber print first then steps back until returning the original userNumber
+        //Example input: 12 11 10 sout(userNumber) prints 10 11 12 and now returns 10.
+        return validUserNum;
+    }
 
     public static int getInteger(int min, int max){
 
@@ -183,7 +189,7 @@ public class MethodsExercises {
     public static void main(String [] args){
 //        System.out.println(recursionMultiplicationMethod(4,5));
 
-        System.out.print(getInteger(1,10));
+        System.out.print(recursiveGetInteger(1,10));
 
 //        getFactorial();
 
