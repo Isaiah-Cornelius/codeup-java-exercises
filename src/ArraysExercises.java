@@ -29,6 +29,8 @@ public class ArraysExercises {
             System.out.println(person.getName());
         }
 
+//        personArray = addPerson(personArray, person4);
+
         for (Person person : addPerson(personArray, "Isaiah")){
             System.out.println(person.getName());
         }

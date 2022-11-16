@@ -51,15 +51,15 @@ public class Input {
     }
 
     public static int getInt(int min, int max){
-        System.out.print("Enter an integer between " + min + " and " + max + " : ");
-        stringUserInput = scanner.next();
+        System.out.print("Enter an integer between " + (min - 1) + " and " + (max + 1) + " : ");
+        stringUserInput = scanner.nextLine();
         try {
             Integer.parseInt(stringUserInput);
         } catch (NumberFormatException nfe){
             System.out.println("Invalid input... ");
             getInt(min, max);
         }
-        if (Integer.parseInt(stringUserInput) > min && Integer.parseInt(stringUserInput) < max){
+        if (Integer.parseInt(stringUserInput) >= min && Integer.parseInt(stringUserInput) <= max){
             validStringUserInput = stringUserInput;
         } else {
             System.out.println("Invalid input... ");
@@ -70,15 +70,15 @@ public class Input {
 
     public static int getInt(int min, int max, String prompt){
         System.out.println(prompt);
-        System.out.print("Enter an integer between " + min + " and " + max + " : ");
-        stringUserInput = scanner.next();
+        System.out.print("Enter an integer between " + (min - 1) + " and " + (max + 1) + " : ");
+        stringUserInput = scanner.nextLine();
         try {
             Integer.parseInt(stringUserInput);
         } catch (NumberFormatException nfe){
             System.out.println("Invalid input... ");
             getInt(min, max, prompt);
         }
-        if (Integer.parseInt(stringUserInput) > min && Integer.parseInt(stringUserInput) < max){
+        if (Integer.parseInt(stringUserInput) >= min && Integer.parseInt(stringUserInput) <= max){
             validStringUserInput = stringUserInput;
         } else {
             System.out.println("Invalid input... ");
@@ -89,7 +89,7 @@ public class Input {
 
     public static int getInt(){
         System.out.print("Enter an integer : ");
-        stringUserInput = scanner.next();
+        stringUserInput = scanner.nextLine();
         try {
             Integer.parseInt(stringUserInput);
         } catch (NumberFormatException nfe){
@@ -103,7 +103,7 @@ public class Input {
     public static int getInt(String prompt){
         System.out.println(prompt);
         System.out.print("Enter an integer : ");
-        stringUserInput = scanner.next();
+        stringUserInput = scanner.nextLine();
         try {
             Integer.parseInt(stringUserInput);
         } catch (NumberFormatException nfe){
