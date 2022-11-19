@@ -47,7 +47,7 @@ public class MethodsExercises {
         return x % y;
     }
 
-    //Q2 ask about recursion
+    //Q2
     public static int validUserNum;
     public static int recursiveGetInteger(int min, int max){
 
@@ -56,17 +56,16 @@ public class MethodsExercises {
 
         System.out.print("recursiveGetInteger; Enter an integer between " + (min - 1) + " and " + (max + 1) + ": ");
         userNumber = scanner.nextInt();
-        if (userNumber >= min && userNumber <= max){
-            validUserNum = userNumber;
-        }
+//        if (userNumber >= min && userNumber <= max){
+//            validUserNum = userNumber;
+//        }
         if (userNumber > max || userNumber < min){
             System.out.println("Invalid Input");
-            recursiveGetInteger(min, max);
+             return recursiveGetInteger(min, max);
         }
 
-        System.out.println(userNumber); //Here is where I see the correct (qualifying) userNumber print first then steps back until returning the original userNumber
-        //Example input: 12 11 10 sout(userNumber) prints 10 11 12 and now returns 10.
-        return validUserNum;
+        System.out.println(userNumber);
+        return userNumber;
     }
 
     public static int getInteger(int min, int max){
