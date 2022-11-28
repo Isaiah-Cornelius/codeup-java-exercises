@@ -50,6 +50,30 @@ public class Input {
         return Boolean.parseBoolean(stringUserInput);
     }
 
+    public static int getHex(){
+        System.out.print("Enter a hexadecimal : ");
+        stringUserInput = scanner.nextLine();
+        try {
+            Integer.parseInt(stringUserInput, 16);
+        } catch (NumberFormatException nfe){
+            System.out.println("Invalid input... ");
+            getHex();
+        }
+        return Integer.parseInt(stringUserInput, 16);
+    }
+
+    public static int getBinary(){
+        System.out.print("Enter a binary number (1's and 0's) : ");
+        stringUserInput = scanner.nextLine();
+        try{
+            Integer.parseInt(stringUserInput, 2);
+        } catch (NumberFormatException nfe){
+            System.out.println("Invalid input...");
+            getBinary();
+        }
+        return Integer.parseInt(stringUserInput, 2);
+    }
+
     public static int getInt(int min, int max){
         System.out.print("Enter an integer between " + (min - 1) + " and " + (max + 1) + " : ");
         stringUserInput = scanner.nextLine();
@@ -186,6 +210,8 @@ public class Input {
 //        System.out.println(getInt("Hello there... "));
 //        System.out.println(getDouble(1,10,"Hello there... "));
 //        System.out.println(getDouble("Hello there... "));
+//        System.out.println(getHex());
+//        System.out.println(getBinary());
 
 
     }
